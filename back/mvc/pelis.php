@@ -3,7 +3,7 @@
 // magic constant
 require_once ("DBAbstractModel.php");//modificar
 
-class valores extends DBAbstractModel {
+class pelis extends DBAbstractModel {
 
     private $id;
     private $nombre_pelicula;
@@ -85,5 +85,3 @@ class valores extends DBAbstractModel {
 
     }
 }
-
-?>
