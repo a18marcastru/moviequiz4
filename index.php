@@ -15,8 +15,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./web/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./web/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./web/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="./web/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./web/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>InfoFilms</title>
@@ -32,13 +33,11 @@
             <div class="col s12">
                 <div class="header">
                     <img src="./web/img/logofilms.png"/>
-                    <div id="logout" class="noactiva">
-                        <h4>Bienvenido de nuevo <?= $user['nombre']; ?> <?= $user['apellido']; ?></h4>
-                        <a href="/back/php/logout.php">
-                            Logout
-                        </a>
+                    <div id="info-usuari" class="noactiva">
+                        <!--<h4>Bienvenido de nuevo <?= $user['nombre']; ?> <?= $user['apellido']; ?></h4>!-->
                         <div id="inicio">
                         </div>
+                        <button class="waves-effect waves-light btn" type="button"><a href="/back/php/logout.php" id="botonlogout">Logout</a></button>
                     </div>
                         <div id="login" class="activa">
                             <input type="text" id="correo" name="correo" placeholder="Tu correo" value="" required/>
