@@ -5,10 +5,19 @@ require_once ("DBAbstractModel.php");//modificar
 
 class pelis extends DBAbstractModel {
 
+<<<<<<< HEAD
     private $imdbId;
     private $nombre_pelicula;
     private $poster;
     private $anyo;
+=======
+    private $id;
+    private $nombre_pelicula;
+    private $anyo;
+    private $valoracion;
+    private $comentario;
+    private $id_user;
+>>>>>>> 02947b91e17d7337a59677f13949962e0d666111
 
     // public $message;
 
@@ -18,7 +27,12 @@ class pelis extends DBAbstractModel {
 
     function __toString() {
         echo "entro string <br>";
+<<<<<<< HEAD
         return "(" . $this->imdbId . ", " . $this->nombre_pelicula . ", " . $this->poster .", " . $this->anyo . ")";
+=======
+        return "(" . $this->id . ", " . $this->nombre_pelicula . ", " . $this->anyo .", " . $this->valoracion . ", " .
+            $this->comentario .", " . $this->id_user . ")";
+>>>>>>> 02947b91e17d7337a59677f13949962e0d666111
     }
 
     function __destruct() {
@@ -37,7 +51,11 @@ class pelis extends DBAbstractModel {
             }
             else $this->query .= ", " . $fields[$i];
         }
+<<<<<<< HEAD
         $this->query .= " FROM peliculas";
+=======
+        $this->query .= " FROM valores";
+>>>>>>> 02947b91e17d7337a59677f13949962e0d666111
         // $this->query = "SELECT * FROM usuario";
         $this->get_results_from_query();
         return $this->rows;
@@ -47,7 +65,11 @@ class pelis extends DBAbstractModel {
     public function select($nombre_pelicula="") {
         if (!empty($nombre_pelicula)) {
             $this->query = "SELECT *
+<<<<<<< HEAD
                     FROM peliculas
+=======
+                    FROM valores
+>>>>>>> 02947b91e17d7337a59677f13949962e0d666111
                     WHERE nombre_pelicula = '$nombre_pelicula'";
             $this->get_results_from_query();
         }
@@ -66,8 +88,13 @@ class pelis extends DBAbstractModel {
             if (empty($result)) {
                 foreach ($user_data as $field => $value)
                     $$field = $value;
+<<<<<<< HEAD
                 $this->query="INSERT INTO peliculas (imdbId, nombre_pelicula, poster, anyo)
                       VALUES ('$imdbId','$nombre_pelicula','$poster','$anyo')";
+=======
+                $this->query="INSERT INTO valores (nombre_pelicula, anyo, valoracion, comentario, id_user)
+                      VALUES ('$nombre_pelicula','$anyo','$valoracion','$comentario','$id_user')";
+>>>>>>> 02947b91e17d7337a59677f13949962e0d666111
                 $this->execute_single_query();
                 $this->message = "Se ha insertado una pelicula";
             } else $this->message = "Ya hay una pelicula";
