@@ -3,8 +3,6 @@
     session_start();
     if (isset($_SESSION['usuario'])) {
         $user = $_SESSION['usuario'];
-
-<<<<<<< HEAD
         if(!empty($_POST['comentario']) && !empty($_POST['imdbId'])) {
             //$contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
             $nuevoValor = array ("id_user" => $user['id'],"id_pelicula" => $_POST['imdbId'],"puntuacion" => $_POST['puntuacion'],
@@ -19,9 +17,7 @@
         else echo "No ha añade valoracion";
     }
     else echo "No se ha iniciado session";
-=======
         if(!empty($_POST['nombre']) && !empty($_POST['anyo']) && !empty($_POST['comentario'])) {
-            //$contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
             $nuevoValor = array ("nombre_pelicula" => $_POST['nombre'],"anyo" => $_POST['anyo'],"valoracion" => 1,"comentario" => $_POST['comentario'],
                 "id_user" => $user['id']);
             $valor = new valores();
@@ -34,5 +30,4 @@
             echo $myJSON;*/
         }
     }
->>>>>>> 02947b91e17d7337a59677f13949962e0d666111
 ?>
